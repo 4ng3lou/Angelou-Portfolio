@@ -1,0 +1,132 @@
+.projects {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.tab {
+    position: relative;
+    padding: 0.55rem 1.2rem;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    border-radius: var(--radius-full);
+    transition: color var(--transition-fast);
+    z-index: 1;
+}
+
+.tab:hover {
+    color: var(--text-primary);
+}
+
+.tabActive {
+    color: #fff;
+}
+
+.tabBg {
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    z-index: -1;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+}
+
+.cardTop {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardEmoji {
+    font-size: 4rem;
+    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.3));
+    transition: transform var(--transition-base);
+}
+
+.card:hover .cardEmoji {
+    transform: scale(1.15) rotate(5deg);
+}
+
+.cardBody {
+    padding: 1.5rem;
+}
+
+.cardTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+    font-size: 0.88rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.cardTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.15rem;
+}
+
+.cardTag {
+    padding: 0.25rem 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--primary-light);
+    background: rgba(124, 58, 237, 0.1);
+    border-radius: var(--radius-full);
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.cardLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.cardLink {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    transition: color var(--transition-fast);
+}
+
+.cardLink:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,99 @@
+.blog {
+    padding: var(--section-padding);
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: box-shadow var(--transition-base);
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-glow);
+}
+
+.cardImg {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cardEmoji {
+    font-size: 3.5rem;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.cardCategory {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-full);
+}
+
+.cardBody {
+    padding: 1.5rem;
+}
+
+.cardMeta {
+    display: flex;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 0.6rem;
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+    transition: color var(--transition-fast);
+}
+
+.card:hover .cardTitle {
+    color: var(--primary-light);
+}
+
+.cardExcerpt {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.readMore {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-accent);
+    transition: color var(--transition-fast);
+}
+
+.card:hover .readMore {
+    color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
