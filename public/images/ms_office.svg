@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#D83B01" rx="20"/>
+  <!-- White "O" letter drawn as a ring -->
+  <circle cx="100" cy="100" r="55" fill="none" stroke="white" stroke-width="22"/>
+</svg>
