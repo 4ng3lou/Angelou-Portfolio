@@ -12,14 +12,14 @@ const certificates = [
         title: "Introduction to C++",
         issuer: "Sololearn",
         date: "Recent",
-        image: "/images/Introduction to C++_certificate.jpg",
+        image: "/images/Introduction_to_C++_certificate.jpg",
     },
     {
         id: "2",
         title: "Introduction to SQL",
         issuer: "Sololearn",
         date: "Recent",
-        image: "/images/Introduction to SQL_certificate.jpg",
+        image: "/images/Introduction_to_SQL_certificate.jpg",
     },
     {
         id: "3",
