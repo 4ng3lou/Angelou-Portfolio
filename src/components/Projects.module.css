@@ -48,11 +48,12 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     transition: transform var(--transition-base), box-shadow var(--transition-base);
+    cursor: pointer;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-glow);
+    box-shadow: var(--shadow-glow), 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .cardTop {
@@ -139,5 +140,163 @@
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.modalContent {
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    background: #0f172a;
+    background: var(--bg-primary);
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modalClose {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    z-index: 10;
+    transition: all var(--transition-fast);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modalClose:hover {
+    background: var(--primary);
+    transform: rotate(90deg);
+}
+
+.modalHero {
+    width: 100%;
+    height: 320px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.modalImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modalEmoji {
+    font-size: 6rem;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.modalBody {
+    padding: 2.5rem;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}
+
+.modalTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.modalTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modalDescription {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+.modalActions {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.modalButton {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: all var(--transition-base);
+    text-align: center;
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.primaryButton {
+    background: var(--gradient-primary);
+    color: #fff;
+}
+
+.primaryButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.secondaryButton {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+.secondaryButton:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .modalHero {
+        height: 200px;
+    }
+
+    .modalTitle {
+        font-size: 1.5rem;
+    }
+
+    .modalBody {
+        padding: 1.5rem;
+    }
+
+    .modalActions {
+        flex-direction: column;
     }
 }
