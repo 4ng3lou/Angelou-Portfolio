@@ -8,7 +8,7 @@ import styles from "./About.module.css";
 const skills = [
     { name: "Frontend Development", level: 85, color: "#61dafb" },
     { name: "Backend Development", level: 80, color: "#68a063" },
-    { name: "Database (MySQL, PostreSQL, Supabase)", level: 85, color: "#336791" },
+    { name: "Database (MySQL, PostgreSQL, Convex, Supabase)", level: 85, color: "#336791" },
     { name: "React / Next.js", level: 95, color: "#61dafb" },
     { name: "React Native", level: 80, color: "#016783ff" },
     { name: "TypeScript", level: 92, color: "#3178c6" },
