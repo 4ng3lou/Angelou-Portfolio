@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import styles from "./Projects.module.css";
 
-const categories = ["All", "Web App", "Mobile", "AI/ML", "Open Source"];
+const categories = ["All", "Web App", "Video Editing", "Graphics", "Mobile", "AI/ML"];
 
 const projects = [
     {
@@ -19,6 +19,7 @@ const projects = [
         githubUrl: "#",
         gradient: "linear-gradient(135deg, #7c3aed, #06b6d4)",
         emoji: "🧺",
+        image: "/images/laundry_system.jpg" // Placeholder for actual photo
     },
     {
         id: "2",
@@ -31,8 +32,34 @@ const projects = [
         githubUrl: "#",
         gradient: "linear-gradient(135deg, #10b981, #06b6d4)",
         emoji: "💼",
+        image: "/images/job_portal.jpg" // Placeholder for actual photo
     },
-
+    {
+        id: "3",
+        title: "Edited Videos Collection",
+        description:
+            "A showcase of professionally edited videos, including cinematic sequences, promotional content, and event coverage highlights.",
+        tags: ["CapCut", "Premiere Pro", "Color Grading", "Sound Design"],
+        category: "Video Editing",
+        liveUrl: "#",
+        githubUrl: "#",
+        gradient: "linear-gradient(135deg, #f43f5e, #7c3aed)",
+        emoji: "🎬",
+        image: "/images/video_editing.jpg" // Placeholder for actual photo
+    },
+    {
+        id: "4",
+        title: "Canva Design Portfolio",
+        description:
+            "Creative graphic designs ranging from social media branding and marketing materials to professional presentations and logos.",
+        tags: ["Canva", "Graphic Design", "Branding", "UI/UX"],
+        category: "Graphics",
+        liveUrl: "#",
+        githubUrl: "#",
+        gradient: "linear-gradient(135deg, #06b6d4, #10b981)",
+        emoji: "🎨",
+        image: "/images/canva_designs.jpg" // Placeholder for actual photo
+    },
 ];
 
 export default function Projects() {
@@ -84,7 +111,11 @@ export default function Projects() {
                                     className={styles.cardTop}
                                     style={{ background: p.gradient }}
                                 >
-                                    <span className={styles.cardEmoji}>{p.emoji}</span>
+                                    {p.image ? (
+                                        <img src={p.image} alt={p.title} className={styles.cardImage} />
+                                    ) : (
+                                        <span className={styles.cardEmoji}>{p.emoji}</span>
+                                    )}
                                 </div>
                                 <div className={styles.cardBody}>
                                     <h3 className={styles.cardTitle}>{p.title}</h3>

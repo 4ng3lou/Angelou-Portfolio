@@ -41,7 +41,6 @@
     font-size: 1.35rem;
     letter-spacing: -0.5px;
     transition: transform var(--transition-base);
-    margin-left: -7rem;
 }
 
 .logo:hover {
@@ -101,7 +100,6 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    margin-right: -7rem;
 }
 
 .cta {
