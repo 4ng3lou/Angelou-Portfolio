@@ -308,7 +308,7 @@ export default function About() {
     };
     const itemVar = {
         hidden: { opacity: 0, x: -40, filter: "blur(8px)" },
-        show: { opacity: 1, x: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 200, damping: 22 } },
+        show: { opacity: 1, x: 0, filter: "blur(0px)", transition: { type: "spring" as const, stiffness: 200, damping: 22 } },
     };
 
     return (
