@@ -344,7 +344,7 @@ export default function Projects() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            Visit Full Collection ↗
+                                            View Website ↗
                                         </a>
                                     ) : (
                                         <button
