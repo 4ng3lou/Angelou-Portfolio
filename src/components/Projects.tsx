@@ -51,6 +51,20 @@ const projects = [
     },
     {
         id: "2",
+        title: "SupportAI",
+        description: "SupportAI acts as a first-line support system that uses AI to instantly respond to customer inquiries. When a situation requires human empathy or expertise, it seamlessly escalates the conversation to a live human agent — all within the same interface.",
+        detailedDescription: "Customers can chat with an AI assistant, submit support tickets, track their issues, and get connected to a human agent when needed. Agents can monitor all incoming conversations, view full chat histories, reply to customers directly, and manage support tickets from a dedicated Agent Panel. Admins have full visibility across the platform — managing users, agents, tickets, analytics, and the knowledge base.",
+        tags: ["Next.js 15", "Bun", "PostgreSQL + Drizzle", "Vercel AI SDK + Groq", "Tailwind CSS v4", "Vercel + Neon", "React Native + Expo"],
+        category: "Web App",
+        liveUrl: "https://ai-support-web-rose.vercel.app/",
+        gradient: "linear-gradient(135deg, #10b981, #06b6d4)",
+        emoji: "🤖",
+        image: "/images/job_portal.jpg",
+        gallery: []
+    },
+
+    {
+        id: "3",
         title: "Online Job Portal",
         description:
             "A full-stack job portal connecting job seekers and employers with secure authentication.",
@@ -71,7 +85,7 @@ const projects = [
         ]
     },
     {
-        id: "3",
+        id: "4",
         title: "Edited Videos Collection",
         description:
             "A showcase of professionally edited videos, including cinematic sequences and event coverage.",
@@ -89,7 +103,7 @@ const projects = [
         ]
     },
     {
-        id: "4",
+        id: "5",
         title: "Canva Design Portfolio",
         description:
             "Creative graphic designs ranging from social media branding to professional presentations.",
