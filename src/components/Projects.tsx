@@ -59,7 +59,7 @@ const projects = [
         liveUrl: "https://ai-support-web-rose.vercel.app/",
         gradient: "linear-gradient(135deg, #10b981, #06b6d4)",
         emoji: "🤖",
-        image: "/images/job_portal.jpg",
+        image: "/images/aisupport.jpg",
         gallery: []
     },
 
