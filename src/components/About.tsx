@@ -62,7 +62,7 @@ const skillCategories = [
             { name: "Vercel AI SDK", level: 85 },
             { name: "OpenAI / Groq (Llama)", level: 83 },
             { name: "Vercel + Neon + Expo EAS", level: 85 },
-            { name: "AWS", level: 72 },
+            { name: "AWS", level: 85 },
             { name: "Docker / CI/CD", level: 85 },
         ],
     },
