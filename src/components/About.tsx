@@ -31,7 +31,7 @@ const skillCategories = [
         skills: [
             { name: "Node.js", level: 88 },
             { name: "Next.js API Routes", level: 90 },
-            { name: "Python", level: 75 },
+            { name: "Python", level: 90 },
             { name: "Laravel (PHP)", level: 90 },
             { name: "C++", level: 85 },
             { name: "C#", level: 90 },
@@ -63,7 +63,7 @@ const skillCategories = [
             { name: "OpenAI / Groq (Llama)", level: 83 },
             { name: "Vercel + Neon + Expo EAS", level: 85 },
             { name: "AWS", level: 72 },
-            { name: "Docker / CI/CD", level: 75 },
+            { name: "Docker / CI/CD", level: 85 },
         ],
     },
     {
@@ -74,8 +74,8 @@ const skillCategories = [
         skills: [
             { name: "Bun", level: 85 },
             { name: "Git / GitHub", level: 90 },
-            { name: "Turborepo (Monorepo)", level: 80 },
-            { name: "Figma", level: 82 },
+            { name: "Turborepo (Monorepo)", level: 85 },
+            { name: "Figma", level: 90 },
             { name: "WordPress / Elementor", level: 88 },
             { name: "GoHighLevel (GHL)", level: 92 },
             { name: "Zoho", level: 90 },
