@@ -13,6 +13,8 @@ const skillCategories = [
         glow: "rgba(97,218,251,0.4)",
         icon: "⚡",
         skills: [
+            { name: "HTML", level: 95 },
+            { name: "CSS", level: 90 },
             { name: "React / Next.js 15", level: 95 },
             { name: "TypeScript", level: 92 },
             { name: "Tailwind CSS v4", level: 90 },
@@ -31,6 +33,9 @@ const skillCategories = [
             { name: "Next.js API Routes", level: 90 },
             { name: "Python", level: 75 },
             { name: "Laravel (PHP)", level: 78 },
+            { name: "C++", level: 85 },
+            { name: "C#", level: 80 },
+            { name: "Java", level: 80 },
             { name: "REST / GraphQL", level: 85 },
             { name: "Zod (Validation)", level: 88 },
             { name: "Better Auth", level: 82 },
@@ -73,6 +78,9 @@ const skillCategories = [
             { name: "Figma", level: 82 },
             { name: "WordPress / Elementor", level: 88 },
             { name: "GoHighLevel (GHL)", level: 92 },
+            { name: "Zoho", level: 90 },
+            { name: "Meta Ads Manager", level: 90 },
+            { name: "Google Data Studio", level: 85 },
         ],
     },
     {
@@ -88,31 +96,39 @@ const skillCategories = [
             { name: "Video Editing", level: 88 },
             { name: "Canva / Adobe Express", level: 90 },
             { name: "Data Encoding", level: 95 },
+            { name: "CapCut", level: 95 },
+        ],
+    },
+    {
+        category: "Productivity",
+        color: "#10b981",
+        glow: "rgba(16,185,129,0.4)",
+        icon: "🗂️",
+        skills: [
+            { name: "Notion", level: 95 },
+            { name: "Trello", level: 95 },
+            { name: "ClickUp", level: 90 },
+            { name: "Airtable", level: 95 },
+            { name: "Asana", level: 88 },
+            { name: "Slack", level: 90 },
+            { name: "Teams", level: 85 },
+            { name: "Loom", level: 80 },
+            { name: "DocuSign", level: 95 },
         ],
     },
 ];
 
-// Tech tags with category colors for the aurora cloud
-const techTagGroups = [
-    { label: "Languages", color: "#61dafb", tags: ["HTML", "CSS", "PHP", "JavaScript", "TypeScript", "Python", "C++", "C#", "Java"] },
-    { label: "Frameworks", color: "#68a063", tags: ["Next.js 15", "React", "React Native", "Expo", "Node.js", "Laravel"] },
-    { label: "Database", color: "#336791", tags: ["MySQL", "PostgreSQL", "Drizzle ORM", "Neon", "Convex", "Supabase"] },
-    { label: "AI & Cloud", color: "#f59e0b", tags: ["Vercel AI SDK", "OpenAI", "Groq", "Vercel", "Expo EAS", "AWS", "Docker", "CI/CD"] },
-    { label: "Styling & Tools", color: "#8b5cf6", tags: ["Tailwind CSS v4", "Bun", "Turborepo", "GitHub", "Git", "GraphQL", "REST", "Better Auth", "Zod"] },
-    { label: "Design", color: "#f43f5e", tags: ["Figma", "Canva", "Adobe Express", "CapCut"] },
-    { label: "Productivity", color: "#10b981", tags: ["Notion", "Trello", "ClickUp", "Airtable", "Asana", "Google Workspace", "MS Office", "Slack", "Teams", "Loom", "DocuSign"] },
-    { label: "Marketing", color: "#a855f7", tags: ["WordPress", "Elementor", "GoHighLevel", "Zoho", "Meta Ads Manager", "Google Data Studio"] },
-];
+
 
 const softSkills = [
-    { name: "Strong Written Communicator", icon: "✍️", desc: "Clear, concise, and impactful written communication across all formats.", color: "#61dafb", level: 95 },
-    { name: "Organized & Reliable", icon: "📋", desc: "Structured workflow management with consistent delivery and zero dropped balls.", color: "#68a063", level: 97 },
-    { name: "Tech-Savvy & Fast Learner", icon: "🚀", desc: "Rapidly adapts to new tools and technologies with minimal onboarding time.", color: "#f59e0b", level: 93 },
-    { name: "Efficient & Focused", icon: "🎯", desc: "Deep work practitioner — quiet, distraction-free, and highly productive.", color: "#8b5cf6", level: 96 },
-    { name: "Detail-Oriented", icon: "🔍", desc: "Nothing slips through. Every pixel, word, and number gets the attention it deserves.", color: "#f43f5e", level: 94 },
-    { name: "Deadline Driven", icon: "⏱️", desc: "Thrives under pressure. Deadlines are a commitment, not a suggestion.", color: "#a855f7", level: 98 },
-    { name: "Marketing Automation", icon: "⚙️", desc: "Expert in CRM workflows, email/SMS campaigns, and funnel automation.", color: "#10b981", level: 90 },
-    { name: "Performance Analytics", icon: "📈", desc: "Data-driven decision making with clear reporting and actionable insights.", color: "#336791", level: 88 },
+    { name: "Strong Written Communicator", icon: "✍️", color: "#61dafb", level: 95 },
+    { name: "Organized & Reliable", icon: "📋", color: "#68a063", level: 97 },
+    { name: "Tech-Savvy & Fast Learner", icon: "🚀", color: "#f59e0b", level: 93 },
+    { name: "Efficient & Focused", icon: "🎯", color: "#8b5cf6", level: 96 },
+    { name: "Detail-Oriented", icon: "🔍", color: "#f43f5e", level: 94 },
+    { name: "Deadline Driven", icon: "⏱️", color: "#a855f7", level: 98 },
+    { name: "Marketing Automation", icon: "⚙️", color: "#10b981", level: 90 },
+    { name: "Performance Analytics", icon: "📈", color: "#336791", level: 88 },
 ];
 
 // ── Particle Canvas ─────────────────────────────────────────────────────────
@@ -241,18 +257,6 @@ function TiltCard({ children, className }: { children: React.ReactNode; classNam
     return <motion.div ref={ref} className={className} style={{ rotateX: sRotX, rotateY: sRotY, transformStyle: "preserve-3d", perspective: 800 }} onMouseMove={onMove} onMouseLeave={onLeave} whileHover={{ scale: 1.04 }} transition={{ type: "spring", stiffness: 300, damping: 20 }}>{children}</motion.div>;
 }
 
-// ── Simple Tech Tag ───────────────────────────────────────────────────────────
-function UltraTag({ text, color }: { text: string; color: string; i?: number; groupIndex?: number }) {
-    return (
-        <span
-            className={styles.ultraTag}
-            style={{ "--tag-color": color } as React.CSSProperties}
-        >
-            {text}
-        </span>
-    );
-}
-
 // ── Simple Soft Skill Card ────────────────────────────────────────────────────
 function SoftSkillCard({ skill, i }: { skill: typeof softSkills[0]; i: number }) {
     return (
@@ -282,7 +286,6 @@ function SoftSkillCard({ skill, i }: { skill: typeof softSkills[0]; i: number })
                     </svg>
                 </div>
                 <p className={styles.softCardName}>{skill.name}</p>
-                <p className={styles.softCardDesc}>{skill.desc}</p>
                 <div className={styles.softCardLine} style={{ background: `linear-gradient(90deg, ${skill.color}, transparent)` }} />
             </div>
         </motion.div>
@@ -383,80 +386,7 @@ export default function About() {
                     </motion.div>
                 </div>
 
-                {/* ══════════════════════════════════════════════
-                    ULTRA TECH STACK SECTION
-                ══════════════════════════════════════════════ */}
-                <motion.div
-                    className={styles.techSection}
-                    initial={{ opacity: 0, y: 60 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, type: "spring" }}
-                >
-                    {/* Section header */}
-                    <div className={styles.bigSectionHeader}>
-                        <motion.div
-                            className={styles.bigSectionIcon}
-                            animate={{ rotate: 360 }}
-                            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        >
-                            <span>⚙️</span>
-                        </motion.div>
-                        <div>
-                            <h2 className={styles.bigSectionTitle}>
-                                <GlitchText text="Tech Stack & Tools" />
-                            </h2>
-
-                        </div>
-                    </div>
-
-                    {/* Aurora background pulse */}
-                    <motion.div
-                        className={styles.techAurora}
-                        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                    />
-
-                    {/* Tag groups */}
-                    <div className={styles.techGroups}>
-                        {techTagGroups.map((group, gi) => (
-                            <motion.div
-                                key={group.label}
-                                className={styles.techGroup}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: gi * 0.1, type: "spring", stiffness: 200 }}
-                            >
-                                {/* Group label */}
-                                <motion.div
-                                    className={styles.techGroupLabel}
-                                    style={{ borderColor: group.color + "44", color: group.color }}
-                                    whileHover={{ scale: 1.05, boxShadow: `0 0 20px ${group.color}44` }}
-                                >
-                                    <motion.span
-                                        className={styles.techGroupDot}
-                                        style={{ background: group.color }}
-                                        animate={{ scale: [1, 1.8, 1], opacity: [1, 0.4, 1] }}
-                                        transition={{ duration: 1.5, repeat: Infinity, delay: gi * 0.2, type: "tween", ease: "easeInOut" }}
-                                    />
-                                    {group.label}
-                                </motion.div>
-
-                                {/* Tags */}
-                                <div className={styles.techGroupTags}>
-                                    {group.tags.map((tag, ti) => (
-                                        <UltraTag key={tag} text={tag} color={group.color} i={ti} groupIndex={gi} />
-                                    ))}
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* ══════════════════════════════════════════════
-                    ULTRA SOFT SKILLS SECTION
-                ══════════════════════════════════════════════ */}
+                {/* ── SOFT SKILLS SECTION ── */}
                 <motion.div
                     className={styles.softSection}
                     initial={{ opacity: 0, y: 60 }}
@@ -465,29 +395,20 @@ export default function About() {
                     transition={{ duration: 0.8, type: "spring" }}
                 >
                     <div className={styles.bigSectionHeader}>
-                        <motion.div
-                            className={styles.bigSectionIcon}
-                            animate={{ scale: [1, 1.15, 1], rotate: [0, 5, -5, 0] }}
-                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", type: "tween" }}
-                        >
+                        <motion.div className={styles.bigSectionIcon} animate={{ scale: [1, 1.15, 1], rotate: [0, 5, -5, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", type: "tween" }}>
                             <span>🧠</span>
                         </motion.div>
                         <div>
-                            <h2 className={styles.bigSectionTitle}>
-                                <GlitchText text="Soft Skills & Attributes" />
-                            </h2>
-
+                            <h2 className={styles.bigSectionTitle}><GlitchText text="Soft Skills & Attributes" /></h2>
                         </div>
                     </div>
 
-                    {/* Soft skills card grid */}
                     <div className={styles.softGrid}>
                         {softSkills.map((skill, i) => (
                             <SoftSkillCard key={skill.name} skill={skill} i={i} />
                         ))}
                     </div>
                 </motion.div>
-
             </div>
         </section>
     );

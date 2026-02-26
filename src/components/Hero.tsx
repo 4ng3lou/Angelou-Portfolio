@@ -7,7 +7,7 @@ import styles from "./Hero.module.css";
 
 const roles = [
     "Information Technology Graduate",
-    "Web Developer",
+    "App/Web Developer",
     "Administrative Support",
     "Creative Designer",
 ];
