@@ -6,18 +6,18 @@ import styles from "./AppsIUse.module.css";
 import { useRef, useState } from "react";
 
 const apps = [
-    { icon: "/images/antigravity_logo.png" },
-    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-    { icon: "https://www.cursor.com/assets/images/logo.svg" },
-    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" },
-    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-    { icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
-    { icon: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" },
-    { icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/capcut-icon.svg" },
-    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
-    { icon: "__msoffice__" },
-    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+    { name: "Antigravity", icon: "/images/antigravity_logo.png" },
+    { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { name: "Cursor", icon: "https://www.cursor.com/assets/images/logo.svg" },
+    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { name: "Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" },
+    { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+    { name: "Canva", icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
+    { name: "Premiere Pro", icon: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" },
+    { name: "CapCut", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/capcut-icon.svg" },
+    { name: "Chrome", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
+    { name: "MS Office", icon: "__msoffice__" },
+    { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
 ];
 
 // ─── Icon ─────────────────────────────────────────────────────────────────────
@@ -51,33 +51,28 @@ function Chip({ app }: { app: typeof apps[0] }) {
             transition={{ type: "spring", stiffness: 400, damping: 22 }}
         >
             <AppIcon app={app} size={52} />
-            <span className={styles.chipName}>{app.name}</span>
         </motion.div>
     );
 }
 
-// ─── Scroller — CSS marquee loop with drag override ──────────────────────────
-
-// Two identical sets side by side; CSS animates translateX(0) → translateX(-50%)
-// which seamlessly loops. Drag pauses the animation and resumes on release.
+// ─── Scroller ────────────────────────────────────────────────────────────────
 
 function Scroller() {
     const trackRef = useRef<HTMLDivElement>(null);
     const [paused, setPaused] = useState(false);
     const dragStartX = useRef(0);
-    const dragStartAnim = useRef(0); // placeholder — we snapshot via matrix
+    const dragStartAnim = useRef(0);
 
     function getCurrentOffset(): number {
         if (!trackRef.current) return 0;
         const mat = new DOMMatrix(getComputedStyle(trackRef.current).transform);
-        return mat.m41; // translateX value
+        return mat.m41;
     }
 
     function onPointerDown(e: React.PointerEvent) {
         (e.currentTarget as HTMLElement).setPointerCapture(e.pointerId);
         dragStartX.current = e.clientX;
         dragStartAnim.current = getCurrentOffset();
-        // Freeze the CSS animation at current position
         if (trackRef.current) {
             const offset = getCurrentOffset();
             trackRef.current.style.animationPlayState = "paused";
@@ -94,7 +89,6 @@ function Scroller() {
 
     function onPointerUp() {
         if (!trackRef.current) return;
-        // Resume CSS animation
         trackRef.current.style.transform = "";
         trackRef.current.style.animationPlayState = "running";
         setPaused(false);
@@ -111,7 +105,6 @@ function Scroller() {
         >
             <div className={styles.fadeLeft} />
             <div className={styles.fadeRight} />
-            {/* Two copies — animation moves -50% so first copy exits as second enters */}
             <div ref={trackRef} className={styles.track}>
                 {[...apps, ...apps].map((app, i) => <Chip key={i} app={app} />)}
             </div>
