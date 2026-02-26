@@ -6,18 +6,18 @@ import styles from "./AppsIUse.module.css";
 import { useRef, useState } from "react";
 
 const apps = [
-    { name: "", icon: "/images/antigravity_logo.png" },
-    { name: "", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-    { name: "", icon: "https://www.cursor.com/assets/images/logo.svg" },
-    { name: "", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-    { name: "", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" },
-    { name: "", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-    { name: "", icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
-    { name: "", icon: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" },
-    { name: "", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/capcut-icon.svg" },
-    { name: "", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
-    { name: "", icon: "__msoffice__" },
-    { name: "", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+    { icon: "/images/antigravity_logo.png" },
+    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+    { icon: "https://www.cursor.com/assets/images/logo.svg" },
+    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" },
+    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+    { icon: "https://www.vectorlogo.zone/logos/canva/canva-icon.svg" },
+    { icon: "https://upload.wikimedia.org/wikipedia/commons/4/40/Adobe_Premiere_Pro_CC_icon.svg" },
+    { icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/capcut-icon.svg" },
+    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" },
+    { icon: "__msoffice__" },
+    { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
 ];
 
 // ─── Icon ─────────────────────────────────────────────────────────────────────
