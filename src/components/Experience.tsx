@@ -32,7 +32,7 @@ const experiences = [
         icon: "🏢",
     },
     {
-        title: "Full-Stack Developer",
+        title: "Developer",
         description:
             "High-performance, type-safe web applications built from the database to the UI. Specialized in crafting seamless digital experiences with a focus on relational data integrity and modern server-side rendering.",
         tech: ["Next.js", "TypeScript", "PostgreSQL", "Rest"],
