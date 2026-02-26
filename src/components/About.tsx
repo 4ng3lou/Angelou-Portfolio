@@ -112,7 +112,7 @@ const skillCategories = [
             { name: "Asana", level: 88 },
             { name: "Slack", level: 90 },
             { name: "Teams", level: 85 },
-            { name: "Loom", level: 80 },
+            { name: "Loom", level: 90 },
             { name: "DocuSign", level: 95 },
         ],
     },
