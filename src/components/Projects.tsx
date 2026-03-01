@@ -353,7 +353,7 @@ export default function Projects() {
                                             target="_blank"
                                             rel="noopener noreferrer"
                                         >
-                                            View Website ↗
+                                            Live Demo ↗
                                         </a>
                                     ) : (
                                         <button
