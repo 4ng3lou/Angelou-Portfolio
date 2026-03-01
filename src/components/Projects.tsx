@@ -73,7 +73,7 @@ const projects = [
         liveUrl: "https://dental-clinic-rosy-eight.vercel.app/",
         gradient: "linear-gradient(135deg, #0ea5e9, #6366f1)",
         emoji: "🦷",
-        image: null,
+        image: "/images/dentalclinic.jpg",
         gallery: []
     },
     {
