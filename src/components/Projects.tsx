@@ -62,9 +62,22 @@ const projects = [
         image: "/images/aisupport.jpg",
         gallery: []
     },
-
     {
         id: "3",
+        title: "DentaFlow",
+        description:
+            "An AI-powered dental clinic management platform with smart scheduling, patient records, automated follow-ups, and an integrated AI assistant for patient care.",
+        detailedDescription: "DentaFlow is a full-stack SaaS platform built for modern dental clinics. It features complete clinic management including patient records, appointment scheduling, treatment tracking, and invoicing. The integrated AI assistant helps with patient care recommendations and automated follow-ups. Clinics can onboard with a 14-day free trial and manage everything from a single, beautifully designed dashboard.",
+        tags: ["Next.js 15", "Better Auth", "PostgreSQL + Drizzle", "Groq AI", "Tailwind CSS", "Vercel + Neon", "Resend"],
+        category: "Web App",
+        liveUrl: "https://dental-clinic-rosy-eight.vercel.app/",
+        gradient: "linear-gradient(135deg, #0ea5e9, #6366f1)",
+        emoji: "🦷",
+        image: null,
+        gallery: []
+    },
+    {
+        id: "4",
         title: "Online Job Portal",
         description:
             "A full-stack job portal connecting job seekers and employers with secure authentication.",
@@ -85,7 +98,7 @@ const projects = [
         ]
     },
     {
-        id: "4",
+        id: "5",
         title: "Edited Videos Collection",
         description:
             "A showcase of professionally edited videos, including cinematic sequences and event coverage.",
@@ -103,7 +116,7 @@ const projects = [
         ]
     },
     {
-        id: "5",
+        id: "6",
         title: "Canva Design Portfolio",
         description:
             "Creative graphic designs ranging from social media branding to professional presentations.",
@@ -133,7 +146,6 @@ export default function Projects() {
     const [active, setActive] = useState("All");
     const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
     const [zoomedImage, setZoomedImage] = useState<string | null>(null);
-    // We keep zoomedVideo state for logic consistency, but we won't trigger it for the gallery items
     const [zoomedVideo, setZoomedVideo] = useState<string | null>(null);
     const galleryRef = useRef<HTMLDivElement>(null);
 
@@ -299,16 +311,13 @@ export default function Projects() {
                                                     key={idx}
                                                     className={styles.galleryItem}
                                                     onClick={(e) => {
-                                                        // ONLY OPEN LIGHTBOX FOR IMAGES
                                                         if (item.type === "image") {
                                                             e.stopPropagation();
                                                             setZoomedImage(item.url);
                                                         }
-                                                        // Videos are now inline GIFs, so no click action needed
                                                     }}
                                                 >
                                                     {item.type === "video" ? (
-                                                        // --- NEW: AUTO-PLAYING GIF-LIKE VIDEO ---
                                                         <video
                                                             src={item.url}
                                                             className={styles.galleryVideo}
@@ -388,7 +397,7 @@ export default function Projects() {
                 )}
             </AnimatePresence>
 
-            {/* Video Lightbox - We keep this code but it won't be triggered from the gallery anymore */}
+            {/* Video Lightbox */}
             <AnimatePresence>
                 {zoomedVideo && (
                     <motion.div
