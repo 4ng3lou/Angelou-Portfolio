@@ -292,61 +292,59 @@ export default function About() {
                     />
                 </motion.div>
 
-                {/* ── PROFILE + INFO ── */}
-                <div className={styles.profileRow}>
-                    <motion.div
-                        className={styles.profileLeft}
-                        initial={{ opacity: 0, x: -60, filter: "blur(12px)" }}
-                        whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.9, type: "spring", stiffness: 120 }}
-                    >
-                        <MagneticWrap strength={0.2}>
-                            <div className={styles.avatarWrap}>
-                                <motion.div className={styles.ring1} animate={{ rotate: 360 }} transition={{ duration: 12, repeat: Infinity, ease: "linear" }} />
-                                <motion.div className={styles.ring2} animate={{ rotate: -360 }} transition={{ duration: 18, repeat: Infinity, ease: "linear" }} />
-                                <motion.div className={styles.ring3} animate={{ rotate: 360 }} transition={{ duration: 24, repeat: Infinity, ease: "linear" }} />
-                                <div className={styles.avatar}>
-                                    <Image src="/images/download.jpg" alt="Angelou Vincent T. Ocampo" fill style={{ objectFit: "cover" }} />
-                                </div>
+                {/* ── PROFILE ── */}
+                <motion.div
+                    className={styles.profileLeft}
+                    initial={{ opacity: 0, y: 40, filter: "blur(12px)" }}
+                    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9, type: "spring", stiffness: 120 }}
+                >
+                    <MagneticWrap strength={0.2}>
+                        <div className={styles.avatarWrap}>
+                            <motion.div className={styles.ring1} animate={{ rotate: 360 }} transition={{ duration: 12, repeat: Infinity, ease: "linear" }} />
+                            <motion.div className={styles.ring2} animate={{ rotate: -360 }} transition={{ duration: 18, repeat: Infinity, ease: "linear" }} />
+                            <motion.div className={styles.ring3} animate={{ rotate: 360 }} transition={{ duration: 24, repeat: Infinity, ease: "linear" }} />
+                            <div className={styles.avatar}>
+                                <Image src="/images/download.jpg" alt="Angelou Vincent T. Ocampo" fill style={{ objectFit: "cover" }} />
                             </div>
-                        </MagneticWrap>
-
-                        <div className={styles.infoCards}>
-                            {[
-                                { icon: "🎓", strong: "BS in IT", p: "JH Cerilles State College" },
-                                { icon: "📍", strong: "Based in", p: "Lakewood, Zamboanga del Sur" },
-                                { icon: "💼", strong: "Seeking", p: "Admin & IT Roles" },
-                            ].map((card, i) => (
-                                <TiltCard key={i} className={`${styles.infoCard} glass`}>
-                                    <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12, type: "spring", stiffness: 220 }} style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
-                                        <motion.span className={styles.infoIcon} animate={{ y: [0, -4, 0] }} transition={{ duration: 2, repeat: Infinity, delay: i * 0.4, type: "tween", ease: "easeInOut" }}>{card.icon}</motion.span>
-                                        <div><strong>{card.strong}</strong><p>{card.p}</p></div>
-                                    </motion.div>
-                                </TiltCard>
-                            ))}
                         </div>
-                    </motion.div>
+                    </MagneticWrap>
 
-                    {/* ── SKILLS GRID ── */}
-                    <motion.div className={styles.skillsGrid} variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true }}>
-                        {skillCategories.map((cat, ci) => (
-                            <motion.div key={cat.category} variants={itemVar} className={styles.skillCategory} style={{ "--cat-color": cat.color } as React.CSSProperties}>
-                                <div className={styles.catHeader}>
-                                    <motion.span className={styles.catIcon} animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }} transition={{ duration: 3, repeat: Infinity, delay: ci * 0.5, type: "tween", ease: "easeInOut" }}>{cat.icon}</motion.span>
-                                    <motion.div className={styles.catDot} style={{ background: cat.color, boxShadow: `0 0 12px ${cat.glow}` }} animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }} transition={{ duration: 2, repeat: Infinity, delay: ci * 0.3, type: "tween", ease: "easeInOut" }} />
-                                    <h3 className={styles.skillsTitle} style={{ color: cat.color }}><GlitchText text={cat.category} /></h3>
-                                </div>
-                                <motion.div className={styles.catUnderline} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: ci * 0.1 }} style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }} />
-                                <div className={styles.skillTagsWrap}>
-                                    {cat.skills.map((s) => (
-                                        <SkillTag key={s.name} name={s.name} color={cat.color} glow={cat.glow} />
-                                    ))}
-                                </div>
-                            </motion.div>
+                    <div className={styles.infoCards}>
+                        {[
+                            { icon: "🎓", strong: "BS in IT", p: "JH Cerilles State College" },
+                            { icon: "📍", strong: "Based in", p: "Lakewood, Zamboanga del Sur" },
+                            { icon: "💼", strong: "Seeking", p: "Admin & IT Roles" },
+                        ].map((card, i) => (
+                            <TiltCard key={i} className={`${styles.infoCard} glass`}>
+                                <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12, type: "spring", stiffness: 220 }} style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}>
+                                    <motion.span className={styles.infoIcon} animate={{ y: [0, -4, 0] }} transition={{ duration: 2, repeat: Infinity, delay: i * 0.4, type: "tween", ease: "easeInOut" }}>{card.icon}</motion.span>
+                                    <div><strong>{card.strong}</strong><p>{card.p}</p></div>
+                                </motion.div>
+                            </TiltCard>
                         ))}
-                    </motion.div>
-                </div>
+                    </div>
+                </motion.div>
+
+                {/* ── SKILLS GRID ── */}
+                <motion.div className={styles.skillsGrid} variants={containerVar} initial="hidden" whileInView="show" viewport={{ once: true }}>
+                    {skillCategories.map((cat, ci) => (
+                        <motion.div key={cat.category} variants={itemVar} className={styles.skillCategory} style={{ "--cat-color": cat.color } as React.CSSProperties}>
+                            <div className={styles.catHeader}>
+                                <motion.span className={styles.catIcon} animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.2, 1] }} transition={{ duration: 3, repeat: Infinity, delay: ci * 0.5, type: "tween", ease: "easeInOut" }}>{cat.icon}</motion.span>
+                                <motion.div className={styles.catDot} style={{ background: cat.color, boxShadow: `0 0 12px ${cat.glow}` }} animate={{ scale: [1, 1.4, 1], opacity: [1, 0.6, 1] }} transition={{ duration: 2, repeat: Infinity, delay: ci * 0.3, type: "tween", ease: "easeInOut" }} />
+                                <h3 className={styles.skillsTitle} style={{ color: cat.color }}><GlitchText text={cat.category} /></h3>
+                            </div>
+                            <motion.div className={styles.catUnderline} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: ci * 0.1 }} style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }} />
+                            <div className={styles.skillTagsWrap}>
+                                {cat.skills.map((s) => (
+                                    <SkillTag key={s.name} name={s.name} color={cat.color} glow={cat.glow} />
+                                ))}
+                            </div>
+                        </motion.div>
+                    ))}
+                </motion.div>
 
                 {/* ── SOFT SKILLS SECTION ── */}
                 <motion.div

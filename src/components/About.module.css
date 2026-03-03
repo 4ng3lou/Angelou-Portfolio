@@ -155,32 +155,18 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   PROFILE ROW
+   PROFILE (centered, above skills)
    ═══════════════════════════════════════════════════════════════ */
-.profileRow {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    gap: 3.5rem;
-    align-items: start;
-    margin-bottom: 5rem;
-    position: relative;
-    z-index: 2;
-}
-
-@media (max-width: 900px) {
-    .profileRow {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ── Left column ─────────────────────────────────────────────────── */
 .profileLeft {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 1.8rem;
-    position: sticky;
-    top: 6rem;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
 }
 
 /* ── Avatar ──────────────────────────────────────────────────────── */
