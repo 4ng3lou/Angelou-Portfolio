@@ -868,3 +868,19 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+.skillTagsWrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.skillTag {
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: default;
+}

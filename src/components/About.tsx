@@ -13,14 +13,14 @@ const skillCategories = [
         glow: "rgba(97,218,251,0.4)",
         icon: "⚡",
         skills: [
-            { name: "HTML", level: 95 },
-            { name: "CSS", level: 90 },
-            { name: "React / Next.js 15", level: 95 },
-            { name: "TypeScript", level: 92 },
-            { name: "Tailwind CSS v4", level: 90 },
-            { name: "React Native + Expo", level: 90 },
-            { name: "UI / UX Design", level: 90 },
-            { name: "Framer Motion", level: 90 },
+            { name: "HTML" },
+            { name: "CSS" },
+            { name: "React / Next.js 15" },
+            { name: "TypeScript" },
+            { name: "Tailwind CSS v4" },
+            { name: "React Native + Expo" },
+            { name: "UI / UX Design" },
+            { name: "Framer Motion" },
         ],
     },
     {
@@ -29,16 +29,16 @@ const skillCategories = [
         glow: "rgba(104,160,99,0.4)",
         icon: "🔧",
         skills: [
-            { name: "Node.js", level: 88 },
-            { name: "Next.js API Routes", level: 90 },
-            { name: "Python", level: 90 },
-            { name: "Laravel (PHP)", level: 90 },
-            { name: "C++", level: 85 },
-            { name: "C#", level: 90 },
-            { name: "Java", level: 90 },
-            { name: "REST / GraphQL", level: 85 },
-            { name: "Zod (Validation)", level: 88 },
-            { name: "Better Auth", level: 85 },
+            { name: "Node.js" },
+            { name: "Next.js API Routes" },
+            { name: "Python" },
+            { name: "Laravel (PHP)" },
+            { name: "C++" },
+            { name: "C#" },
+            { name: "Java" },
+            { name: "REST / GraphQL" },
+            { name: "Zod (Validation)" },
+            { name: "Better Auth" },
         ],
     },
     {
@@ -47,10 +47,10 @@ const skillCategories = [
         glow: "rgba(51,103,145,0.4)",
         icon: "🗄️",
         skills: [
-            { name: "PostgreSQL + Drizzle ORM", level: 85 },
-            { name: "MySQL", level: 85 },
-            { name: "Neon (Serverless PG)", level: 82 },
-            { name: "Convex / Supabase", level: 80 },
+            { name: "PostgreSQL + Drizzle ORM" },
+            { name: "MySQL" },
+            { name: "Neon (Serverless PG)" },
+            { name: "Convex / Supabase" },
         ],
     },
     {
@@ -59,11 +59,11 @@ const skillCategories = [
         glow: "rgba(245,158,11,0.4)",
         icon: "🤖",
         skills: [
-            { name: "Vercel AI SDK", level: 85 },
-            { name: "OpenAI / Groq (Llama)", level: 83 },
-            { name: "Vercel + Neon + Expo EAS", level: 85 },
-            { name: "AWS", level: 85 },
-            { name: "Docker / CI/CD", level: 85 },
+            { name: "Vercel AI SDK" },
+            { name: "OpenAI / Groq (Llama)" },
+            { name: "Vercel + Neon + Expo EAS" },
+            { name: "AWS" },
+            { name: "Docker / CI/CD" },
         ],
     },
     {
@@ -72,15 +72,15 @@ const skillCategories = [
         glow: "rgba(139,92,246,0.4)",
         icon: "🛠️",
         skills: [
-            { name: "Bun", level: 85 },
-            { name: "Git / GitHub", level: 90 },
-            { name: "Turborepo (Monorepo)", level: 85 },
-            { name: "Figma", level: 90 },
-            { name: "WordPress / Elementor", level: 88 },
-            { name: "GoHighLevel (GHL)", level: 92 },
-            { name: "Zoho", level: 90 },
-            { name: "Meta Ads Manager", level: 90 },
-            { name: "Google Data Studio", level: 85 },
+            { name: "Bun" },
+            { name: "Git / GitHub" },
+            { name: "Turborepo (Monorepo)" },
+            { name: "Figma" },
+            { name: "WordPress / Elementor" },
+            { name: "GoHighLevel (GHL)" },
+            { name: "Zoho" },
+            { name: "Meta Ads Manager" },
+            { name: "Google Data Studio" },
         ],
     },
     {
@@ -89,14 +89,14 @@ const skillCategories = [
         glow: "rgba(244,63,94,0.4)",
         icon: "📊",
         skills: [
-            { name: "Funnel Building (Lead Gen)", level: 95 },
-            { name: "Task & Calendar Management", level: 95 },
-            { name: "Automation & Documentation", level: 90 },
-            { name: "Administrative Support", level: 95 },
-            { name: "Video Editing", level: 88 },
-            { name: "Canva / Adobe Express", level: 90 },
-            { name: "Data Encoding", level: 95 },
-            { name: "CapCut", level: 95 },
+            { name: "Funnel Building (Lead Gen)" },
+            { name: "Task & Calendar Management" },
+            { name: "Automation & Documentation" },
+            { name: "Administrative Support" },
+            { name: "Video Editing" },
+            { name: "Canva / Adobe Express" },
+            { name: "Data Encoding" },
+            { name: "CapCut" },
         ],
     },
     {
@@ -105,30 +105,28 @@ const skillCategories = [
         glow: "rgba(16,185,129,0.4)",
         icon: "🗂️",
         skills: [
-            { name: "Notion", level: 95 },
-            { name: "Trello", level: 95 },
-            { name: "ClickUp", level: 90 },
-            { name: "Airtable", level: 95 },
-            { name: "Asana", level: 88 },
-            { name: "Slack", level: 90 },
-            { name: "Teams", level: 85 },
-            { name: "Loom", level: 90 },
-            { name: "DocuSign", level: 95 },
+            { name: "Notion" },
+            { name: "Trello" },
+            { name: "ClickUp" },
+            { name: "Airtable" },
+            { name: "Asana" },
+            { name: "Slack" },
+            { name: "Teams" },
+            { name: "Loom" },
+            { name: "DocuSign" },
         ],
     },
 ];
 
-
-
 const softSkills = [
-    { name: "Strong Written Communicator", icon: "✍️", color: "#61dafb", level: 95 },
-    { name: "Organized & Reliable", icon: "📋", color: "#68a063", level: 97 },
-    { name: "Tech-Savvy & Fast Learner", icon: "🚀", color: "#f59e0b", level: 93 },
-    { name: "Efficient & Focused", icon: "🎯", color: "#8b5cf6", level: 96 },
-    { name: "Detail-Oriented", icon: "🔍", color: "#f43f5e", level: 94 },
-    { name: "Deadline Driven", icon: "⏱️", color: "#a855f7", level: 98 },
-    { name: "Marketing Automation", icon: "⚙️", color: "#10b981", level: 90 },
-    { name: "Performance Analytics", icon: "📈", color: "#336791", level: 88 },
+    { name: "Strong Written Communicator", icon: "✍️", color: "#61dafb" },
+    { name: "Organized & Reliable", icon: "📋", color: "#68a063" },
+    { name: "Tech-Savvy & Fast Learner", icon: "🚀", color: "#f59e0b" },
+    { name: "Efficient & Focused", icon: "🎯", color: "#8b5cf6" },
+    { name: "Detail-Oriented", icon: "🔍", color: "#f43f5e" },
+    { name: "Deadline Driven", icon: "⏱️", color: "#a855f7" },
+    { name: "Marketing Automation", icon: "⚙️", color: "#10b981" },
+    { name: "Performance Analytics", icon: "📈", color: "#336791" },
 ];
 
 // ── Particle Canvas ─────────────────────────────────────────────────────────
@@ -187,26 +185,6 @@ function GlitchText({ text, className }: { text: string; className?: string }) {
     );
 }
 
-// ── Animated Counter ─────────────────────────────────────────────────────────
-function AnimatedCounter({ to, suffix = "%" }: { to: number; suffix?: string }) {
-    const [count, setCount] = useState(0);
-    const [started, setStarted] = useState(false);
-    const ref = useRef<HTMLSpanElement>(null);
-    useEffect(() => {
-        const obs = new IntersectionObserver(([e]) => {
-            if (e.isIntersecting && !started) {
-                setStarted(true);
-                let start = 0;
-                const step = to / 40;
-                const timer = setInterval(() => { start += step; if (start >= to) { setCount(to); clearInterval(timer); } else setCount(Math.floor(start)); }, 30);
-            }
-        }, { threshold: 0.5 });
-        if (ref.current) obs.observe(ref.current);
-        return () => obs.disconnect();
-    }, [to, started]);
-    return <span ref={ref}>{count}{suffix}</span>;
-}
-
 // ── Magnetic Wrap ─────────────────────────────────────────────────────────────
 function MagneticWrap({ children, strength = 0.3 }: { children: React.ReactNode; strength?: number }) {
     const ref = useRef<HTMLDivElement>(null);
@@ -218,26 +196,20 @@ function MagneticWrap({ children, strength = 0.3 }: { children: React.ReactNode;
     return <motion.div ref={ref} style={{ x: sx, y: sy }} onMouseMove={onMove} onMouseLeave={onLeave}>{children}</motion.div>;
 }
 
-// ── Holo Bar ─────────────────────────────────────────────────────────────────
-function HoloBar({ level, color, glow, name }: { level: number; color: string; glow: string; name: string }) {
-    const [hovered, setHovered] = useState(false);
-    const [sparks, setSparks] = useState<{ id: number; x: number; delay: number }[]>([]);
-    const spawn = () => { const ps = Array.from({ length: 6 }, (_, i) => ({ id: Date.now() + i, x: Math.random() * level, delay: i * 0.04 })); setSparks(ps); setTimeout(() => setSparks([]), 800); };
+// ── Skill Tag ─────────────────────────────────────────────────────────────────
+function SkillTag({ name, color, glow }: { name: string; color: string; glow: string }) {
     return (
-        <div className={styles.holoBarWrap} onMouseEnter={() => { setHovered(true); spawn(); }} onMouseLeave={() => setHovered(false)}>
-            <div className={styles.skillMeta}>
-                <span className={styles.skillName}>{name}</span>
-                <span className={styles.skillPct} style={{ color }}><AnimatedCounter to={level} /></span>
-            </div>
-            <div className={styles.skillTrack}>
-                <motion.div className={styles.skillBar} initial={{ width: 0, opacity: 0 }} whileInView={{ width: `${level}%`, opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-                    style={{ background: `linear-gradient(90deg, ${color}88, ${color}, ${color}cc)`, boxShadow: hovered ? `0 0 24px ${glow}, 0 0 48px ${glow}` : `0 0 8px ${glow}` }}>
-                    <motion.div className={styles.shimmer} animate={{ x: ["-100%", "200%"] }} transition={{ duration: 2.2, repeat: Infinity, repeatDelay: 1.8, ease: "easeInOut" }} />
-                </motion.div>
-                {sparks.map((p) => (<motion.div key={p.id} className={styles.barParticle} style={{ left: `${p.x}%`, background: color }} initial={{ y: 0, opacity: 1, scale: 1 }} animate={{ y: -22, opacity: 0, scale: 0 }} transition={{ duration: 0.55, delay: p.delay }} />))}
-                {[25, 50, 75].map((m) => (<div key={m} className={styles.milestone} style={{ left: `${m}%` }} />))}
-            </div>
-        </div>
+        <motion.div
+            className={styles.skillTag}
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            whileHover={{ scale: 1.07, boxShadow: `0 0 14px ${glow}` }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+            style={{ borderColor: color, color }}
+        >
+            {name}
+        </motion.div>
     );
 }
 
@@ -270,20 +242,6 @@ function SoftSkillCard({ skill, i }: { skill: typeof softSkills[0]; i: number })
             <div className={styles.softCardFront} style={{ "--skill-color": skill.color } as React.CSSProperties}>
                 <div className={styles.softCardTop}>
                     <span className={styles.softCardIcon}>{skill.icon}</span>
-                    <svg className={styles.softRing} viewBox="0 0 36 36">
-                        <circle className={styles.softRingBg} cx="18" cy="18" r="15" />
-                        <motion.circle
-                            className={styles.softRingFill}
-                            cx="18" cy="18" r="15"
-                            strokeDasharray="94"
-                            initial={{ strokeDashoffset: 94 }}
-                            whileInView={{ strokeDashoffset: 94 - (skill.level / 100) * 94 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.4, delay: i * 0.06, ease: [0.16, 1, 0.3, 1] }}
-                            style={{ stroke: skill.color }}
-                        />
-                        <text x="18" y="21" className={styles.softRingText}>{skill.level}%</text>
-                    </svg>
                 </div>
                 <p className={styles.softCardName}>{skill.name}</p>
                 <div className={styles.softCardLine} style={{ background: `linear-gradient(90deg, ${skill.color}, transparent)` }} />
@@ -380,7 +338,11 @@ export default function About() {
                                     <h3 className={styles.skillsTitle} style={{ color: cat.color }}><GlitchText text={cat.category} /></h3>
                                 </div>
                                 <motion.div className={styles.catUnderline} initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: ci * 0.1 }} style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }} />
-                                {cat.skills.map((s) => (<HoloBar key={s.name} name={s.name} level={s.level} color={cat.color} glow={cat.glow} />))}
+                                <div className={styles.skillTagsWrap}>
+                                    {cat.skills.map((s) => (
+                                        <SkillTag key={s.name} name={s.name} color={cat.color} glow={cat.glow} />
+                                    ))}
+                                </div>
                             </motion.div>
                         ))}
                     </motion.div>
