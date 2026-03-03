@@ -49,20 +49,6 @@
     }
 }
 
-@keyframes auroraFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 @keyframes scanPulse {
 
     0%,
@@ -266,13 +252,13 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   SKILLS GRID (full width, 3 columns)
+   SKILLS GRID (full width, 3 columns, uniform height)
    ═══════════════════════════════════════════════════════════════ */
 .skillsGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.2rem;
-    align-items: start;
+    align-items: stretch;
     margin-bottom: 3.5rem;
     position: relative;
     z-index: 2;
@@ -295,6 +281,8 @@
     overflow: hidden;
     backdrop-filter: blur(6px);
     transition: border-color 0.4s, background 0.4s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .skillCategory::before {
@@ -371,6 +359,8 @@
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.75rem;
+    flex: 1;
+    align-content: flex-start;
 }
 
 .skillTag {
