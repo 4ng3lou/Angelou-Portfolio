@@ -21,6 +21,9 @@ const skillCategories = [
             { name: "React Native + Expo" },
             { name: "UI / UX Design" },
             { name: "Framer Motion" },
+            { name: "Vite" },
+            { name: "Vue" },
+            { name: "Astro" },
         ],
     },
 
