@@ -23,6 +23,17 @@ const skillCategories = [
             { name: "Framer Motion" },
         ],
     },
+
+    {
+        category: "3D + Animation",
+        color: "#b700a2ff",
+        glow: "rgba(194, 0, 142, 0.4)",
+        icon: "🎮",
+        skills: [
+            { name: "Three.js" },
+            { name: "GSAP" },
+        ],
+    },
     {
         category: "Backend Development",
         color: "#68a063",
@@ -30,6 +41,7 @@ const skillCategories = [
         icon: "🔧",
         skills: [
             { name: "Node.js" },
+            { name: "Express.js" },
             { name: "Next.js API Routes" },
             { name: "Python" },
             { name: "Laravel (PHP)" },
