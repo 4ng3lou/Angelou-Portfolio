@@ -19,6 +19,7 @@ const skillCategories = [
             { name: "TypeScript" },
             { name: "Tailwind CSS v4" },
             { name: "React Native + Expo" },
+            { name: "Flutter" },
             { name: "UI / UX Design" },
             { name: "Framer Motion" },
             { name: "Vite" },
