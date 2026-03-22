@@ -140,6 +140,32 @@ const projects = [
             { type: "image", url: "/images/10.png", title: "Dashboard Overview" },
         ]
     },
+    {
+        id: "7",
+        title: "Pulse Mobile App",
+        description: "A comprehensive mobile dashboard for team collaboration, task management, and document vaulting.",
+        detailedDescription: "Pulse is a state-of-the-art mobile application designed for high-performance teams. It features a secure login system, a dynamic dashboard for 7-day activity tracking, an automated alert system, a collaborative task board, and a secure document vault. Built with a focus on user experience and productivity.",
+        tags: ["Flutter", "Firebase", "Dart", "UI/UX Design"],
+        category: "Mobile",
+        liveUrl: "#",
+        gradient: "linear-gradient(135deg, #00f2fe, #4facfe)",
+        emoji: "📱",
+        image: "/images/pulse_1.png",
+        gallery: [
+            { type: "image", url: "/images/pulse_1.png", title: "Login Screen" },
+            { type: "image", url: "/images/pulse_2.png", title: "Dashboard" },
+            { type: "image", url: "/images/pulse_3.png", title: "Alerts System" },
+            { type: "image", url: "/images/pulse_4.png", title: "Task Board" },
+            { type: "image", url: "/images/pulse_5.png", title: "Document Vault" },
+            { type: "image", url: "/images/pulse_6.png", title: "Insights & Analytics" },
+            { type: "image", url: "/images/pulse_7.png", title: "Team Management" },
+            { type: "image", url: "/images/pulse_8.png", title: "Activity Home" },
+            { type: "image", url: "/images/pulse_9.png", title: "Text Reporting" },
+            { type: "image", url: "/images/pulse_10.png", title: "Voice Recording" },
+            { type: "image", url: "/images/pulse_11.png", title: "History Filter" },
+            { type: "image", url: "/images/pulse_12.png", title: "User Settings" },
+        ]
+    },
 ];
 
 export default function Projects() {
