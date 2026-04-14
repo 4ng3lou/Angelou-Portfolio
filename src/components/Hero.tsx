@@ -6,9 +6,10 @@ import ParticleCanvas from "./ParticleCanvas";
 import styles from "./Hero.module.css";
 
 const roles = [
-    "Information Technology Graduate",
-    "App/Web Developer",
-    "Administrative Support",
+    "Full-Stack Developer",
+    "Virtual Assistant",
+    "Backend Engineer",
+    "IT Graduate (BS Information Technology)",
     "Creative Designer",
 ];
 
@@ -81,9 +82,9 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                    A passionate IT graduate bringing together technical programming skills,
+                    Results-driven Full-Stack Developer &amp; Virtual Assistant with hands-on experience delivering
                     <br />
-                    creative design, and efficient administrative capabilities.
+                    production-grade web apps and backend systems across Australia, Taiwan, and the Philippines.
                 </motion.p>
 
                 <motion.div
@@ -116,18 +117,18 @@ export default function Hero() {
                     transition={{ duration: 1, delay: 1.3 }}
                 >
                     <div className={styles.stat}>
-                        <span className={styles.statNum}>2025</span>
-                        <span className={styles.statLabel}>IT Graduate</span>
+                        <span className={styles.statNum}>7+</span>
+                        <span className={styles.statLabel}>Key Projects</span>
                     </div>
                     <div className={styles.statDivider} />
                     <div className={styles.stat}>
-                        <span className={styles.statNum}>2+</span>
-                        <span className={styles.statLabel}>Major Projects</span>
+                        <span className={styles.statNum}>3</span>
+                        <span className={styles.statLabel}>Time Zones</span>
                     </div>
                     <div className={styles.statDivider} />
                     <div className={styles.stat}>
-                        <span className={styles.statNum}>100%</span>
-                        <span className={styles.statLabel}>Dedication</span>
+                        <span className={styles.statNum}>6+</span>
+                        <span className={styles.statLabel}>Roles Held</span>
                     </div>
 
                 </motion.div>

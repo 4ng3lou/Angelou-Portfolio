@@ -49,6 +49,7 @@ const skillCategories = [
             { name: "Next.js API Routes" },
             { name: "Python" },
             { name: "Laravel (PHP)" },
+            { name: "Delphi (Pascal)" },
             { name: "C++" },
             { name: "C#" },
             { name: "Java" },
@@ -66,7 +67,8 @@ const skillCategories = [
             { name: "PostgreSQL + Drizzle ORM" },
             { name: "MySQL" },
             { name: "Neon (Serverless PG)" },
-            { name: "Convex / Supabase" },
+            { name: "Supabase / Convex" },
+            { name: "Firebase" },
         ],
     },
     {

@@ -166,6 +166,20 @@ const projects = [
             { type: "image", url: "/images/pulse_12.png", title: "User Settings" },
         ]
     },
+    {
+        id: "8",
+        title: "Gym Landing Page Funnel",
+        description:
+            "A 3-step lead generation funnel for a gym client with GoHighLevel CRM, automated email/SMS sequences, and Zoho analytics sync. Achieved a 45% increase in trial sign-ups.",
+        detailedDescription: "Designed and built a mobile-responsive gym landing page integrated with a 3-step lead generation funnel using GoHighLevel. Configured automated email and SMS sequences synced with Zoho CRM to nurture leads through the pipeline. Implemented a CRM-integrated prospect workflow: New Lead → Contacted → Booked → Member. Achieved a 45% increase in trial sign-ups and improved lead response time by 70%.",
+        tags: ["GoHighLevel", "Zoho CRM", "Email Automation", "SMS Sequences"],
+        category: "Web App",
+        liveUrl: "#",
+        gradient: "linear-gradient(135deg, #f59e0b, #ef4444)",
+        emoji: "🏋️",
+        image: "",
+        gallery: []
+    },
 ];
 
 export default function Projects() {
