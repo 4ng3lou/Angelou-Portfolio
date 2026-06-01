@@ -42,6 +42,15 @@ const experiences = [
         icon: "🤖",
     },
     {
+        title: "GHL Website & Marketing Assistant (Contract)",
+        company: "All My Notary Solutions LLC — Sapphira Ballah | Jersey City, NJ (Remote)",
+        period: "2026 — Present",
+        description:
+            "Support Sapphira Ballah, owner of All My Notary Solutions LLC, with GoHighLevel website management and digital marketing for her NJ-based notary business serving Jersey City, Brooklyn, and Manhattan. Build and maintain service pages and funnels for mobile notary, remote online notarization (RON), apostille, loan signing, and fingerprinting/I-9 compliance offerings. Configure appointment booking flows, email and SMS automations, and CRM pipelines for B2B leads from legal, healthcare, and corporate clients. Assist with brand presence across her notary company and modeling portfolio.",
+        tech: ["GoHighLevel", "Email Automation", "SMS Sequences", "CRM Pipelines", "Landing Pages", "Appointment Booking"],
+        icon: "📋",
+    },
+    {
         title: "Web Designer & Funnel Builder (Contract)",
         company: "UPSCALE — Philosophically Built Web Design",
         period: "2025 — Present",
