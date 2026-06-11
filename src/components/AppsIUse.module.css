@@ -1,0 +1,103 @@
+.section {
+    padding: var(--section-spacing);
+    position: relative;
+    overflow: hidden;
+}
+
+.block {
+    margin-top: 2.5rem;
+}
+
+/* ─── Scroller ────────────────────────────────────────────────────────────── */
+.scrollerOuter {
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 0;
+    user-select: none;
+}
+
+.fadeLeft,
+.fadeRight {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.fadeLeft {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg, #0a0a0f) 0%, transparent 100%);
+}
+
+.fadeRight {
+    right: 0;
+    background: linear-gradient(270deg, var(--bg, #0a0a0f) 0%, transparent 100%);
+}
+
+.track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ─── Chip ────────────────────────────────────────────────────────────────── */
+.chip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    flex-shrink: 0;
+    cursor: grab;
+}
+
+.chipName {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+/* ─── Particles ───────────────────────────────────────────────────────────── */
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+/* ─── Blobs ───────────────────────────────────────────────────────────────── */
+.blob1 {
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(110px);
+    z-index: -1;
+    pointer-events: none;
+    top: 50%;
+    left: -110px;
+    transform: translateY(-50%);
+    background: var(--accent);
+}

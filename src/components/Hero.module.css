@@ -1,0 +1,229 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 6rem 1.5rem 4rem;
+}
+
+.blob1,
+.blob2,
+.blob3 {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+    animation: blob 15s ease-in-out infinite;
+}
+
+.blob1 {
+    width: 500px;
+    height: 500px;
+    background: rgba(124, 58, 237, 0.12);
+    top: -10%;
+    left: -5%;
+}
+
+.blob2 {
+    width: 400px;
+    height: 400px;
+    background: rgba(6, 182, 212, 0.1);
+    bottom: -5%;
+    right: -5%;
+    animation-delay: -5s;
+}
+
+.blob3 {
+    width: 350px;
+    height: 350px;
+    background: rgba(244, 63, 94, 0.08);
+    top: 50%;
+    left: 60%;
+    animation-delay: -10s;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.greeting {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-light);
+    margin-bottom: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: var(--radius-full);
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.name {
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+
+.roleRow {
+    min-height: 2.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.roleText {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+.cursor {
+    animation: pulse-glow 1s step-end infinite;
+    color: var(--primary);
+    margin-left: 2px;
+}
+
+.bio {
+    max-width: 540px;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.btnPrimary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btnPrimary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btnSecondary {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    transition: transform var(--transition-fast), border-color var(--transition-fast),
+        background var(--transition-fast);
+}
+
+.btnSecondary:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+    background: rgba(124, 58, 237, 0.08);
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.25rem 2rem;
+    border-radius: var(--radius-lg);
+    background: var(--bg-glass);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border-glass);
+}
+
+.stat {
+    text-align: center;
+}
+
+.statNum {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.statLabel {
+    font-size: 0.78rem;
+    color: var(--text-tertiary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.statDivider {
+    width: 1px;
+    height: 36px;
+    background: var(--border-glass);
+}
+
+.scrollIndicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.mouse {
+    width: 24px;
+    height: 38px;
+    border: 2px solid var(--text-tertiary);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+}
+
+.wheel {
+    width: 3px;
+    height: 8px;
+    background: var(--primary-light);
+    border-radius: 2px;
+    animation: pulse-glow 1.5s infinite;
+}
+
+@media (max-width: 768px) {
+    .stats {
+        gap: 1rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .btnPrimary,
+    .btnSecondary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+}
