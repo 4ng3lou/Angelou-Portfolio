@@ -35,12 +35,25 @@ export default function ChatWidget() {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: updated, system: SYSTEM }),
+        body: JSON.stringify({ messages: updated }),
       });
-      const data = await res.json();
-      setMessages([...updated, { role: "assistant", content: data.reply || "Sorry, I couldn't respond." }]);
+      if (!res.ok || !res.body) throw new Error("Bad response");
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let text = "";
+      const withPlaceholder: Message[] = [...updated, { role: "assistant", content: "" }];
+      setMessages(withPlaceholder);
+      setLoading(false);
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        text += decoder.decode(value, { stream: true });
+        setMessages([...updated, { role: "assistant", content: text }]);
+      }
+      if (!text) setMessages([...updated, { role: "assistant", content: "Sorry, I couldn't respond." }]);
     } catch {
       setMessages([...updated, { role: "assistant", content: "Something went wrong. Please try again!" }]);
+      setLoading(false);
     } finally {
       setLoading(false);
     }

@@ -1,5 +1,6 @@
 "use client";
 import { useRef } from "react";
+import { VCARD_QR } from "./vcardQr";
 
 export default function DevCard() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -108,7 +109,7 @@ export default function DevCard() {
           <p style={{
             marginTop: 5, fontSize: 9, fontFamily: "monospace",
             fontWeight: 500, textTransform: "uppercase",
-            letterSpacing: "0.05em", color: "rgba(255,255,255,0.35)",
+            letterSpacing: "0.05em", color: "rgba(255,255,255,0.55)",
           }}>
             Access Card
           </p>
@@ -116,9 +117,9 @@ export default function DevCard() {
           <p style={{
             marginTop: 52, fontSize: 9, fontFamily: "monospace",
             fontWeight: 500, textTransform: "uppercase",
-            letterSpacing: "0.05em", color: "rgba(255,255,255,0.35)",
+            letterSpacing: "0.05em", color: "rgba(255,255,255,0.55)",
           }}>
-            IT Graduate &amp; Developer
+            Full-Stack &middot; AI &middot; GHL Developer
           </p>
           <p style={{
             marginTop: 4, fontSize: 14, fontFamily: "monospace",
@@ -129,13 +130,13 @@ export default function DevCard() {
           </p>
           <p style={{
             fontSize: 10, fontFamily: "monospace",
-            color: "rgba(255,255,255,0.5)", marginTop: 2, letterSpacing: "0.02em",
+            color: "rgba(255,255,255,0.62)", marginTop: 2, letterSpacing: "0.02em",
           }}>
             Vincent T. Ocampo
           </p>
           <p style={{
             fontSize: 9, fontFamily: "monospace",
-            color: "rgba(255,255,255,0.25)", marginTop: 3,
+            color: "rgba(255,255,255,0.5)", marginTop: 3,
           }}>
             Zamboanga del Sur, PH
           </p>
@@ -146,45 +147,18 @@ export default function DevCard() {
           position: "absolute", bottom: 20, left: 20, zIndex: 10,
           fontSize: 9, fontFamily: "monospace", fontWeight: 500,
           textTransform: "uppercase", letterSpacing: "0.05em",
-          color: "rgba(255,255,255,0.35)", margin: 0,
+          color: "rgba(255,255,255,0.55)", margin: 0,
         }}>
           Developer &amp; Designer
         </p>
 
-        {/* Bottom-right QR */}
-        <div style={{
-          position: "absolute", bottom: 20, right: 20, zIndex: 10,
-          width: 46, height: 46, opacity: 0.45,
-        }}>
-          <svg width="46" height="46" viewBox="0 0 50 50" fill="none">
-            <rect x="2"  y="2"  width="16" height="16" rx="2" fill="white"/>
-            <rect x="5"  y="5"  width="10" height="10" rx="1" fill="#111"/>
-            <rect x="7"  y="7"  width="6"  height="6"  fill="white"/>
-            <rect x="32" y="2"  width="16" height="16" rx="2" fill="white"/>
-            <rect x="35" y="5"  width="10" height="10" rx="1" fill="#111"/>
-            <rect x="37" y="7"  width="6"  height="6"  fill="white"/>
-            <rect x="2"  y="32" width="16" height="16" rx="2" fill="white"/>
-            <rect x="5"  y="35" width="10" height="10" rx="1" fill="#111"/>
-            <rect x="7"  y="37" width="6"  height="6"  fill="white"/>
-            <rect x="20" y="2"  width="4" height="4" fill="white"/>
-            <rect x="26" y="4"  width="2" height="2" fill="white"/>
-            <rect x="20" y="20" width="6" height="2" fill="white"/>
-            <rect x="28" y="20" width="4" height="4" fill="white"/>
-            <rect x="34" y="22" width="2" height="2" fill="white"/>
-            <rect x="20" y="26" width="2" height="4" fill="white"/>
-            <rect x="24" y="28" width="4" height="2" fill="white"/>
-            <rect x="30" y="26" width="2" height="2" fill="white"/>
-            <rect x="34" y="28" width="6" height="2" fill="white"/>
-            <rect x="42" y="26" width="4" height="4" fill="white"/>
-            <rect x="20" y="32" width="4" height="2" fill="white"/>
-            <rect x="26" y="34" width="2" height="4" fill="white"/>
-            <rect x="30" y="32" width="6" height="2" fill="white"/>
-            <rect x="38" y="34" width="4" height="2" fill="white"/>
-            <rect x="20" y="40" width="2" height="6" fill="white"/>
-            <rect x="24" y="42" width="4" height="2" fill="white"/>
-            <rect x="30" y="40" width="2" height="4" fill="white"/>
-            <rect x="34" y="42" width="4" height="4" fill="white"/>
-            <rect x="40" y="40" width="6" height="2" fill="white"/>
+        {/* Bottom-right QR — real, scannable vCard (saves contact on scan) */}
+        <p style={{ position: "absolute", bottom: 126, right: 18, zIndex: 10, margin: 0, fontSize: 8, fontFamily: "monospace", fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.06em", color: "rgba(255,255,255,0.5)" }}>
+          Scan &rarr; launch devcard
+        </p>
+        <div style={{ position: "absolute", bottom: 16, right: 16, zIndex: 10, width: 104, height: 104, padding: 7, borderRadius: 8, background: "#fff", boxSizing: "border-box" }}>
+          <svg width="100%" height="100%" viewBox={`0 0 ${VCARD_QR.count} ${VCARD_QR.count}`} shapeRendering="crispEdges" role="img" aria-label="Scan to open Angelou Vincent T. Ocampo's DevCard OS">
+            <path d={VCARD_QR.path} fill="#111" />
           </svg>
         </div>
       </div>

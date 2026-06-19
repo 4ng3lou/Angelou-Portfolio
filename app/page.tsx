@@ -1,20 +1,21 @@
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
 import RecommendationsCarousel from "@/components/RecommendationsCarousel";
-import GalleryCarousel from "@/components/GalleryCarousel";
 import ChatWidget from "@/components/ChatWidget";
 import DevCard from "@/components/DevCard";
 import ProjectTabs from "@/components/ProjectTabs";
+import AppsIUse from "@/components/AppsIUse";
 import StarBackground from "@/components/StarBackground";
 import LocalTimeCard from "@/components/LocalTimeCard";
 import HoverAvatar from "@/components/HoverAvatar";
+import CertificationsSection from "@/components/CertificationsSection";
 
 export default function Home() {
   return (
     <div style={{ minHeight: "100vh", background: "var(--bg)", color: "var(--text)", position: "relative" }}>
       <StarBackground />
       <div style={{ position: "relative", zIndex: 1 }}>
-        <div style={{ maxWidth: 1024, margin: "0 auto", padding: "40px 24px" }}>
+        <div className="page-container">
 
           {/* ════ HERO ════ */}
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24, alignItems: "flex-start", marginBottom: 32, paddingBottom: 32, borderBottom: "1px solid var(--border)" }}>
@@ -46,7 +47,7 @@ export default function Home() {
               </div>
 
               <p style={{ fontSize: 13, color: "var(--text-2)", marginBottom: 16 }}>
-                IT Graduate &nbsp;·&nbsp; Full-Stack Developer
+                Full-Stack, AI & GHL Developer
               </p>
 
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
@@ -63,56 +64,42 @@ export default function Home() {
                   </svg>
                   Send Email
                 </a>
-                <a href="/resume.pdf" download="Angelou_Ocampo_Resume.pdf" className="btn-secondary">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Download CV
-                </a>
               </div>
             </div>
           </div>
 
           {/* ════ TWO-COLUMN ════ */}
-          <div style={{ display: "flex", gap: 40, flexWrap: "wrap" }}>
+          <div className="two-col-layout">
 
             {/* ── LEFT ── */}
-            <div style={{ flex: 1, minWidth: 280 }}>
+            <div className="main-col">
 
               {/* ABOUT */}
               <section id="about" className="section-card" style={{ marginBottom: 32 }}>
                 <h2 className="section-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", marginRight: 8, verticalAlign: "middle" }}><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>About</h2>
                 <div style={{ marginTop: 16, display: "flex", flexDirection: "column", gap: 12, fontSize: 13, lineHeight: 1.75, color: "var(--text-2)" }}>
                   <p style={{ color: "var(--text)" }}>
-                    A passionate and adaptable IT graduate with hands-on experience in administrative support,
-                    data management, and digital content creation. I bring together technical programming skills,
-                    creative design, and efficient administrative capabilities.
+                    I&apos;m a full-stack developer, AI integrator, and GoHighLevel specialist based in the
+                    Philippines, with a background in Information Technology and hands-on experience across
+                    web development, mobile apps, and digital marketing systems.
                   </p>
                   <p>
-                    I&apos;ve helped businesses streamline their processes — from building full-stack web apps
-                    to designing lead generation funnels that increased trial sign-ups by 45%.
+                    I work mostly with JavaScript, TypeScript, Python, and PHP, and I&apos;m comfortable
+                    across the whole stack — from the server logic to the interface someone actually uses.
+                    Beyond the code, I also work inside GoHighLevel — building funnels, automating workflows,
+                    setting up CRM pipelines, and wiring it all together with email and SMS sequences for
+                    real business results.
                   </p>
                   <p>
-                    Currently building AI-powered applications with Next.js 15, TypeScript, and modern LLM
-                    integrations like OpenAI and Groq.
+                    Over the past couple of years I&apos;ve worked with remote teams and clients in different
+                    countries and time zones, which taught me to communicate clearly, stay dependable, and
+                    deliver without needing to be chased. Lately I&apos;ve been especially drawn to AI and how
+                    it&apos;s changing the way software gets built — I pick up new tools quickly and adapt to
+                    whatever a project calls for. More than anything, I just like building things that are
+                    genuinely useful to the people who use them.
                   </p>
                 </div>
 
-                <div style={{ marginTop: 20, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                  {facts.map(f => (
-                    <div key={f.label} className="fact-card">
-                      <div style={{ width: 28, height: 28, borderRadius: 6, background: "var(--bg-hover)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                        {f.icon}
-                      </div>
-                      <div>
-                        <p style={{ fontSize: 10, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{f.label}</p>
-                        <p style={{ fontSize: 12, color: "var(--text)", fontWeight: 500 }}>{f.sub}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </section>
 
               <div className="divider" />
@@ -144,8 +131,45 @@ export default function Home() {
 
               {/* PROJECTS */}
               <div className="section-card" style={{ marginBottom: 32 }}>
-                <h2 className="section-title" style={{ marginBottom: 16 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", marginRight: 8, verticalAlign: "middle" }}><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /></svg>Projects</h2>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
+                  <h2 className="section-title"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", marginRight: 8, verticalAlign: "middle" }}><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /></svg>Projects</h2>
+                  <Link href="/projects" className="view-all-link">
+                    View All
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </Link>
+                </div>
                 <ProjectTabs />
+              </div>
+
+              <div className="divider" />
+
+              {/* APPS I USE */}
+              <div className="section-card" style={{ marginBottom: 32 }}>
+                <AppsIUse />
+              </div>
+
+              <div className="divider" />
+
+              {/* BEYOND CODING */}
+              <div className="section-card" style={{ marginBottom: 32 }}>
+                <h2 className="section-title" style={{ marginBottom: 4 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", marginRight: 8, verticalAlign: "middle" }}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>Beyond Coding</h2>
+                <p style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 16 }}>More than just a developer</p>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
+                  {[
+                    { title: "Video Editing", desc: "CapCut, Premiere Pro, After Effects, DaVinci Resolve — reels, events, cinematic content" },
+                    { title: "Graphic Design", desc: "Canva & Adobe Express — branding kits, social media graphics, presentations" },
+                    { title: "Admin Support", desc: "Data encoding, calendar management, documentation, and workflow automation" },
+                    { title: "Always Exploring", desc: "Love learning new tech and tools — currently diving deeper into AI integrations and automation" },
+                    { title: "Willing to Learn", desc: "Adaptable and fast learner, open to any stack, tool, or workflow needed for the job" },
+                  ].map(item => (
+                    <div key={item.title} style={{ padding: "12px 14px", borderRadius: 10, border: "1px solid var(--border)", background: "var(--bg)", display: "flex", flexDirection: "column", gap: 6 }}>
+                      <p style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>{item.title}</p>
+                      <p style={{ fontSize: 11, color: "var(--text-muted)", lineHeight: 1.6 }}>{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="divider" />
@@ -162,15 +186,7 @@ export default function Home() {
                       </svg>
                     </Link>
                   </div>
-                  <div style={{ border: "1px solid var(--border)", borderRadius: 8, overflow: "hidden" }}>
-                    {certifications.map((c, i) => (
-                      <a key={c.title} href={c.href} target="_blank" rel="noopener noreferrer" className="cert-row"
-                        style={{ borderBottom: i < certifications.length - 1 ? "1px solid var(--border)" : "none" }}>
-                        <p style={{ fontSize: 13, fontWeight: 500, color: "var(--text)" }}>{c.title}</p>
-                        <p style={{ fontSize: 11, color: "var(--text-muted)" }}>{c.issuer}</p>
-                      </a>
-                    ))}
-                  </div>
+                  <CertificationsSection />
                 </section>
 
                 <section id="recommendations" className="section-card" style={{ flex: 1, minWidth: 220 }}>
@@ -187,9 +203,9 @@ export default function Home() {
                   <p style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Social Links</p>
                   <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                     {[
-                      { label: "GitHub", href: "https://github.com/angeloocampo", icon: <GithubIcon /> },
-                      { label: "LinkedIn", href: "https://www.linkedin.com/in/angelou-vincent-ocampo", icon: <LinkedinIcon /> },
-                      { label: "Twitter/X", href: "#", icon: <TwitterIcon /> },
+                      { label: "Facebook", href: "https://www.facebook.com/angelou.ocampo.12", icon: <FacebookIcon /> },
+                      { label: "LinkedIn", href: "https://www.linkedin.com/in/angelou-vincent-t-ocampo-753175189/", icon: <LinkedinIcon /> },
+                      { label: "Instagram", href: "https://www.instagram.com/_lou.ao?igsh=dTY2Y2o2b3BsODZv", icon: <InstagramIcon /> },
                     ].map(s => (
                       <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" className="social-link">
                         {s.icon}{s.label}
@@ -198,28 +214,11 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div>
-                  <p style={{ fontSize: 11, color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 10 }}>Speaking</p>
-                  <p style={{ fontSize: 12, color: "var(--text-2)", lineHeight: 1.6, marginBottom: 12 }}>
-                    Available for speaking events about software development and emerging technologies.
-                  </p>
-                  <a href="mailto:angeloocampo61@gmail.com" style={{ fontSize: 12, fontWeight: 600, color: "var(--text)", textDecoration: "none", display: "flex", alignItems: "center", gap: 4 }}>
-                    Get in touch
-                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                      <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                  </a>
-                </div>
-
                 <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                   {[
                     {
                       label: "Email", value: "angeloocampo61@gmail.com", href: "mailto:angeloocampo61@gmail.com",
                       icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
-                    },
-                    {
-                      label: "Phone", value: "09210592860", href: "tel:09210592860",
-                      icon: <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.94-.94a2 2 0 0 1 2.25-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" /></svg>
                     },
                     {
                       label: "Location", value: "Zamboanga del Sur", href: "#",
@@ -236,7 +235,7 @@ export default function Home() {
             </div>
 
             {/* ── RIGHT SIDEBAR ── */}
-            <div style={{ width: 260, flexShrink: 0, display: "flex", flexDirection: "column", gap: 16, position: "sticky", bottom: 24, alignSelf: "flex-end" }}>
+            <div className="sidebar-col">
               <LocalTimeCard />
 
               <DevCard />
@@ -247,44 +246,19 @@ export default function Home() {
                   {/* Vertical timeline line */}
                   <div style={{ position: "absolute", left: 4, top: 14, bottom: 14, width: 1.5, background: "var(--border-2)" }} />
                   {experience.map((item, i) => (
-                    <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12, paddingTop: 12, paddingBottom: 12, position: "relative" }}>
-                      <div style={{ marginTop: 6, width: 10, height: 10, borderRadius: "50%", border: i === 0 ? "1.5px solid var(--text)" : "1.5px solid var(--text-faint)", background: i === 0 ? "var(--text)" : "var(--bg)", flexShrink: 0, zIndex: 1 }} />
-                      <div style={{ flex: 1 }}>
+                    <div key={i} className="exp-item">
+                      <div style={{ marginTop: 6, width: 10, height: 10, borderRadius: "50%", border: (i === 0 || i === 3) ? "1.5px solid var(--text)" : "1.5px solid var(--text-faint)", background: (i === 0 || i === 3) ? "var(--text)" : "var(--bg)", flexShrink: 0, zIndex: 1 }} />
+                      <div style={{ flex: 1, minWidth: 0 }}>
                         <p style={{ fontSize: 13, fontWeight: 600, color: "var(--text)", lineHeight: 1.3 }}>{item.role}</p>
                         <p style={{ fontSize: 11, color: "var(--text-muted)", marginTop: 2 }}>{item.company}</p>
                       </div>
-                      <span style={{ fontSize: 11, color: "var(--text-faint)", flexShrink: 0 }}>{item.year}</span>
+                      <span className="exp-year">{item.year}</span>
                     </div>
                   ))}
                 </div>
               </section>
             </div>
 
-          </div>
-
-          {/* BEYOND CODING */}
-          <div className="section-card" style={{ marginTop: 32 }}>
-            <h2 className="section-title" style={{ marginBottom: 4 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", marginRight: 8, verticalAlign: "middle" }}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>Beyond Coding</h2>
-            <p style={{ fontSize: 12, color: "var(--text-muted)", marginBottom: 16 }}>More than just a developer</p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
-              {[
-                { icon: "🎬", title: "Video Editing", desc: "CapCut, Premiere Pro, After Effects, DaVinci Resolve — reels, events, cinematic content" },
-                { icon: "🎨", title: "Graphic Design", desc: "Canva & Adobe Express — branding kits, social media graphics, presentations" },
-                { icon: "🗂️", title: "Admin Support", desc: "Data encoding, calendar management, documentation, and workflow automation" },
-                { icon: "🔍", title: "Always Exploring", desc: "Love learning new tech and tools — currently diving deeper into AI integrations and automation" },
-                { icon: "🤝", title: "Willing to Learn", desc: "Adaptable and fast learner, open to any stack, tool, or workflow needed for the job" },
-              ].map(item => (
-                <div key={item.title} style={{ padding: "12px 14px", borderRadius: 10, border: "1px solid var(--border)", background: "var(--bg)", display: "flex", flexDirection: "column", gap: 6 }}>
-                  <p style={{ fontSize: 13, fontWeight: 600, color: "var(--text)" }}>{item.title}</p>
-                  <p style={{ fontSize: 11, color: "var(--text-muted)", lineHeight: 1.6 }}>{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div style={{ marginTop: 40, paddingTop: 32, borderTop: "1px solid var(--border)" }}>
-            <h2 style={{ fontSize: 17, fontWeight: 700, color: "var(--text)", marginBottom: 20 }}><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: "inline", marginRight: 8, verticalAlign: "middle" }}><rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>Gallery</h2>
-            <GalleryCarousel />
           </div>
 
           <div style={{ marginTop: 40, paddingTop: 20, borderTop: "1px solid var(--border)", display: "flex", justifyContent: "center" }}>
@@ -300,60 +274,42 @@ export default function Home() {
   );
 }
 
-function GithubIcon() {
-  return <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" /></svg>;
+function FacebookIcon() {
+  return <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>;
 }
 function LinkedinIcon() {
   return <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" /><circle cx="4" cy="4" r="2" /></svg>;
 }
-function TwitterIcon() {
-  return <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" /></svg>;
+function InstagramIcon() {
+  return <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>;
 }
 
-const facts = [
-  {
-    label: "BS in IT", sub: "JH Cerilles State College",
-    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c3 3 9 3 12 0v-5" /></svg>
-  },
-  {
-    label: "Based in", sub: "Lakewood, Zamboanga del Sur",
-    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
-  },
-  {
-    label: "Seeking", sub: "Admin & IT Roles",
-    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2" /></svg>
-  },
-  {
-    label: "Email", sub: "angeloocampo61@gmail.com",
-    icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
-  },
-];
 
 const techStack: Record<string, { items: string[] }> = {
-  "Frontend": { items: ["HTML", "CSS", "React", "Next.js 15", "TypeScript", "Tailwind CSS v4", "React Native + Expo", "UI/UX Design", "Framer Motion", "Vue", "Vite", "Astro"] },
+  "Frontend": { items: ["HTML", "CSS", "React / Next.js 15", "TypeScript", "Tailwind CSS v4", "React Native + Expo", "Flutter", "UI/UX Design", "Framer Motion", "Vite", "Vue", "Astro"] },
   "3D & Animations": { items: ["Three.js", "GSAP"] },
-  "Backend": { items: ["Node.js", "Express.js", "Next.js API Routes", "Python", "Laravel (PHP)", "C#", "REST / GraphQL", "Zod", "Better Auth"] },
-  "Database & ORM": { items: ["PostgreSQL + Drizzle ORM", "MySQL", "Neon", "Convex", "Supabase"] },
-  "AI & Cloud": { items: ["Vercel AI SDK", "OpenAI", "Groq (Llama)", "AWS", "Docker", "CI/CD"] },
-  "Tools": { items: ["Bun", "Git / GitHub", "Figma", "GoHighLevel", "Zoho", "WordPress", "Notion", "Airtable"] },
+  "Backend": { items: ["Node.js", "Express.js", "Next.js API Routes", "Python", "Laravel (PHP)", "Delphi (Pascal)", "C++", "C#", "Java", "REST / GraphQL", "Zod (Validation)", "Better Auth"] },
+  "Database & ORM": { items: ["PostgreSQL + Drizzle ORM", "MySQL", "Neon (Serverless PG)", "Supabase / Convex", "Firebase"] },
+  "AI & Cloud": { items: ["Vercel AI SDK", "OpenAI / Groq (Llama)", "Vercel + Neon + Expo EAS", "AWS", "Docker / CI/CD"] },
+  "Tools & Package Managers": { items: ["Bun", "Git / GitHub", "Turborepo (Monorepo)", "Figma", "WordPress / Elementor", "GoHighLevel (GHL)", "Zoho", "Meta Ads Manager", "Google Data Studio"] },
+  "Administrative & Digital": { items: ["Funnel Building (Lead Gen)", "Task & Calendar Management", "Automation & Documentation", "Administrative Support", "Video Editing", "Canva / Adobe Express", "Data Encoding", "CapCut"] },
+  "Productivity": { items: ["Notion", "Trello", "ClickUp", "Airtable", "Asana", "Slack", "Teams", "Loom", "DocuSign"] },
 };
 
-const certifications = [
-  { title: "Introduction to C++", issuer: "Sololearn · Recent", href: "#" },
-  { title: "Introduction to SQL", issuer: "Sololearn · Recent", href: "#" },
-  { title: "Graphic and Design Professional", issuer: "Educational Institution · Recent", href: "#" },
-  { title: "Video Editing & Videography", issuer: "Industry Workshop · Recent", href: "#" },
-];
 
 const experience = [
-  { role: "Full-Stack Developer", company: "Freelance Projects", year: "Ongoing" },
-  { role: "Web Designer & Funnel Builder", company: "UPSCALE — Web Design", year: "Recent" },
-  { role: "Administrative Support", company: "Philippine Statistics Authority", year: "2025" },
-  { role: "Intern — Admin Office", company: "Philippine Statistics Authority", year: "Jan–May 2025" },
-  { role: "BS Information Technology", company: "JH Cerilles State College", year: "2025" },
+  { role: "Programmer Assistant (Contract)", company: "SKOApp — Australian/French Client", year: "2026 — Present" },
+  { role: "Full Stack Developer (Contract)", company: "Maple Technology Developers, Davao (Remote)", year: "2026" },
+  { role: "Junior Backend Engineer (Contract)", company: "DI Strategy Group, Taiwan (Remote)", year: "2026" },
+  { role: "GHL Website & Marketing Assistant", company: "All My Notary Solutions LLC — NJ (Remote)", year: "2026 — Present" },
+  { role: "Freelance Full-Stack Developer", company: "Self-Employed — SaaS & Client Projects (Remote)", year: "2025" },
+  { role: "Web Designer & Funnel Builder", company: "UPSCALE — Web Design", year: "2025" },
+  { role: "Administrative Support & Intern", company: "Philippine Statistics Authority", year: "2025" },
 ];
 
 const recommendations = [
   { text: "Angelou consistently delivered quality work ahead of deadlines. His tech skills and responsiveness made remote collaboration easy.", author: "Jie Mawile", role: "PSA Zamboanga del Sur — Supervisor" },
-  { text: "A reliable and tech-savvy professional. Angelou brings both creative and technical skills to every project he takes on.", author: "Colleague", role: "Philippine Statistics Authority" },
+  { text: "Angelou built our full-stack web app from scratch and handled deployment seamlessly. Great communication across time zones — highly recommended for remote dev work.", author: "SKOApp Client", role: "SKOApp — Australia/France" },
+  { text: "Fast turnaround, clean code, and always available when we needed changes. Angelou understood the backend requirements quickly and delivered a solid API.", author: "DI Strategy Group", role: "DI Strategy Group — Taiwan (Remote)" },
 ];
+
